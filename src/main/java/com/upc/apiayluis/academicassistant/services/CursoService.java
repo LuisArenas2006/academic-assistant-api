@@ -18,6 +18,9 @@ public class CursoService {
     private ModelMapper modelMapper;
 
     public CursoDTO saveCurso(CursoDTO cursoDTO) {
+        if(cursoRepository.existsByCodigo(cursoDTO.getCodigo())) {
+            throw new RuntimeException("Este codigo de curso " + cursoDTO.getCodigo() + "ya existe.");
+        }
         Curso curso = modelMapper.map(cursoDTO, Curso.class);
         Curso cursoSaved = cursoRepository.save(curso);
         return modelMapper.map(cursoSaved, CursoDTO.class);
@@ -42,4 +45,6 @@ public class CursoService {
         }
         cursoRepository.deleteById(id);
     }
+
+
 }

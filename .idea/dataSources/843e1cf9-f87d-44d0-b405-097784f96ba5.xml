@@ -11,9 +11,9 @@
 4||10|c|G
 4||10|C|G
 4||10|T|G</Grants>
-      <IntrospectionStateNumber>4521</IntrospectionStateNumber>
+      <IntrospectionStateNumber>4530</IntrospectionStateNumber>
       <ServerVersion>18.3</ServerVersion>
-      <StartupTime>1784500652</StartupTime>
+      <StartupTime>1784746993</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -809,7 +809,7 @@ false Zulu
 14860||10|C|G
 14860||-9223372036854775808|U|G
 14860||10|U|G</Grants>
-      <IntrospectionStateNumber>4521</IntrospectionStateNumber>
+      <IntrospectionStateNumber>4530</IntrospectionStateNumber>
       <ObjectId>94881</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4330,15 +4330,167 @@ false Zulu
       <AutoIntrospectionLevel>3</AutoIntrospectionLevel>
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <LastIntrospectionL1Xid>4521</LastIntrospectionL1Xid>
-      <LastIntrospectionL2Xid>4521</LastIntrospectionL2Xid>
-      <LastIntrospectionL3Xid>4521</LastIntrospectionL3Xid>
+      <LastIntrospectionL1Xid>4530</LastIntrospectionL1Xid>
+      <LastIntrospectionL2Xid>4530</LastIntrospectionL2Xid>
+      <LastIntrospectionL3Xid>4530</LastIntrospectionL3Xid>
       <LastIntrospectionLevel>3</LastIntrospectionLevel>
-      <LastIntrospectionLocalTimestamp>2026-07-21.22:20:26</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2026-07-23.22:25:16</LastIntrospectionLocalTimestamp>
       <LastIntrospectionVersion>260210</LastIntrospectionVersion>
       <ObjectId>2200</ObjectId>
       <StateNumber>546</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
+    <sequence id="273" parent="272" name="apuntes_id_seq">
+      <DetailsLevel>2</DetailsLevel>
+      <ObjectId>94894</ObjectId>
+      <SequenceIdentity>1</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>4528</StateNumber>
+      <StoredType>bigint|0s</StoredType>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="274" parent="272" name="cursos_id_seq">
+      <DetailsLevel>2</DetailsLevel>
+      <ObjectId>94882</ObjectId>
+      <SequenceIdentity>1</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>4522</StateNumber>
+      <StoredType>bigint|0s</StoredType>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <table id="275" parent="272" name="apuntes">
+      <DetailsLevel>2</DetailsLevel>
+      <ObjectId>94895</ObjectId>
+      <StateNumber>4529</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="276" parent="272" name="cursos">
+      <DetailsLevel>2</DetailsLevel>
+      <ObjectId>94883</ObjectId>
+      <StateNumber>4529</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <column id="277" parent="275" name="id">
+      <GeneratedKind>identity-by-default</GeneratedKind>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>4528</StateNumber>
+      <StoredType>bigint|0s</StoredType>
+      <SequenceId>94894</SequenceId>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="278" parent="275" name="contenido">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>4528</StateNumber>
+      <StoredType>text|0s</StoredType>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="279" parent="275" name="fecha_creacion">
+      <Position>3</Position>
+      <StateNumber>4528</StateNumber>
+      <StoredType>timestamp(6)|0s</StoredType>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="280" parent="275" name="titulo">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StateNumber>4528</StateNumber>
+      <StoredType>varchar(150)|0s</StoredType>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="281" parent="275" name="curso_id">
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StateNumber>4528</StateNumber>
+      <StoredType>bigint|0s</StoredType>
+      <TypeId>20</TypeId>
+    </column>
+    <foreign-key id="282" parent="275" name="fk4vfkbd1aw8eovgohnqxsewyrm">
+      <ColNames>curso_id</ColNames>
+      <ObjectId>94906</ObjectId>
+      <StateNumber>4529</StateNumber>
+      <RefKeyColPositions>1</RefKeyColPositions>
+      <RefTableId>94883</RefTableId>
+    </foreign-key>
+    <index id="283" parent="275" name="apuntes_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>94904</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>4528</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="284" parent="275" name="apuntes_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>94905</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>4528</StateNumber>
+      <UnderlyingIndexId>94904</UnderlyingIndexId>
+    </key>
+    <column id="285" parent="276" name="id">
+      <GeneratedKind>identity-by-default</GeneratedKind>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>4522</StateNumber>
+      <StoredType>bigint|0s</StoredType>
+      <SequenceId>94882</SequenceId>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="286" parent="276" name="ciclo">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>4522</StateNumber>
+      <StoredType>integer|0s</StoredType>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="287" parent="276" name="codigo">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StateNumber>4522</StateNumber>
+      <StoredType>varchar(10)|0s</StoredType>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="288" parent="276" name="nombre">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StateNumber>4522</StateNumber>
+      <StoredType>varchar(100)|0s</StoredType>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="289" parent="276" name="cursos_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>94890</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>4522</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <index id="290" parent="276" name="uk5chgkqo5rseqn463ia6onnoeu">
+      <ColNames>codigo</ColNames>
+      <ObjectId>94892</ObjectId>
+      <StateNumber>4524</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationNames>default</CollationNames>
+      <CollationIds>100</CollationIds>
+      <CollationParentNames>pg_catalog</CollationParentNames>
+    </index>
+    <key id="291" parent="276" name="cursos_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>94891</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>4522</StateNumber>
+      <UnderlyingIndexId>94890</UnderlyingIndexId>
+    </key>
+    <key id="292" parent="276" name="uk5chgkqo5rseqn463ia6onnoeu">
+      <ObjectId>94893</ObjectId>
+      <StateNumber>4524</StateNumber>
+      <UnderlyingIndexId>94892</UnderlyingIndexId>
+    </key>
   </database-model>
 </dataSource>
